@@ -20,7 +20,6 @@ const camera = new THREE.PerspectiveCamera(
 function setSceneDefinitions() {
     scene.background = new THREE.Color()
     scene.add(new THREE.AxesHelper(5))
-
 }
 
 function setLight() {
@@ -42,14 +41,16 @@ function setLight() {
 function setCamera() {
     camera.position.z = 2
 }
-
+const container = document.getElementById( 'modelContainer' );
 const renderer = new THREE.WebGLRenderer({alpha: true})
 // renderer.physicallyCorrectLights = true //deprecated
 renderer.useLegacyLights = false //use this instead of setting physicallyCorrectLights=true property
 renderer.shadowMap.enabled = true
+
 // renderer.outputEncoding = THREE.sRGBEncoding
 renderer.setSize(window.innerWidth, window.innerHeight)
-document.body.appendChild(renderer.domElement)
+document.body.appendChild(container);
+container.appendChild( renderer.domElement );
 
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.enableDamping = true

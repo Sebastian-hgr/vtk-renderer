@@ -1,0 +1,21 @@
+body {
+    overflow: hidden;
+    margin: 0px;
+}
+
+#inputData {
+    text-align: left;
+    margin-left: 4vw;
+    padding-top: 6vh;
+    flex: 1;
+}
+
+.preCuts {
+
+}
+
+.mainDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
