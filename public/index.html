@@ -18,40 +18,58 @@
 </head>
 <body>
 
-<!--<div class="mainDiv">-->
-<!--    <div class="grid-child green" id="inputData">-->
-<!--        <h1>Cutting Tool</h1>-->
-<!--        <form class="form">-->
-<!--            <label for="langle">Angle</label><br>-->
-<!--            <input type="text" id="langle" name="fname"><br>-->
-<!--            <label for="loffset">Offset</label><br>-->
-<!--            <input type="text" id="loffset" name="lname">-->
-<!--        </form>-->
-<!--        <div class="preCuts">-->
-<!--            <button id="eighth">eighth</button>-->
-<!--            <button id="full">full</button>-->
-<!--            <button id="hcut">hcut</button>-->
-<!--            <button id="quarter">quarter</button>-->
-<!--            <button id="slice">slice</button>-->
-<!--            <button id="vcut">vcut</button>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="grid-child purple" id="modelContainer"></div>-->
+<div class="content header">
+    <h1 class="header-text">
+        VTK-RENDERER-DEMO | PRIMETALS TECHNOLOGIES
+        <img class="header-logo" src="favicon.ico">
+    </h1>
+</div>
 
-<!--</div>-->
-
-
-    <div class="content" id="modelContainer">
+<div class="content form">
+    <div class="form-inner form-buttons">
+        <button class="btn-shape" id="eighth">EIGHTH</button>
+        <button class="btn-shape" id="full">FULL</button>
+        <button class="btn-shape" id="hcut">HCUT</button>
+        <button class="btn-shape" id="quarter">QUARTER</button>
+        <button class="btn-shape" id="slice">SLICE</button>
+        <button class="btn-shape" id="vcut">VCUT</button>
     </div>
-    <div class="content">
-        <button id="eighth">eighth</button>
+    <div class="form-inner form-cut">
+        <h3 class="form-header">Cutting Tool</h3>
+        <form action="http://localhost:3000/getCut">
+            <div class="form-content-box">
+                <div class="form-content left">
+                    <input class="left-content" type="radio" id="v-plane" name="cuttingTool" value="1">V-Plane<br>
+                    <input class="left-content" type="radio" id="h-plane" name="cuttingTool" value="2">H-Plane<br>
+                    <input class="left-content" type="checkbox">Show Volume<br>
+                </div>
+                <div class="form-content middle">
+                    360°<br>
+                    <input class="form-slider" id="slider" type="range" orient="vertical" min="0" max="360"
+                           value="0"><br>
+                    0°<br>
+                </div>
+                <div class="form-content right">
+                    <input class="form-lock" type="checkbox">Lock Manuel<br>
+
+                    Angeles Offset<br>
+                    <input class="form-input" id="output-angle" type="text" value="">
+                    <input class="form-input" type="text"><br>
+                    <input class="form-output" id="output-angle-second" type="text" readonly><br>
+                    <input class="form-submit" type="submit" value="CUT">
+                </div>
+            </div>
+        </form>
     </div>
+</div>
+<div class="content model" id="modelContainer"></div>
+
+<div class="content console">
+    <p class="console-text" id="consoleOutput"></p>
+</div>
 
 <script type="module" src="main.js"></script>
 
 
 </body>
 </html>
-<!--<form action="http://localhost:3000/getCut">-->
-<!--    <input type="submit" value="cut"/>-->
-<!--</form>-->

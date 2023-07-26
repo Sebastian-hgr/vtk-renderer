@@ -41,7 +41,8 @@ function setLight() {
 function setCamera() {
     camera.position.z = 2
 }
-const container = document.getElementById( 'modelContainer' );
+
+const container = document.getElementById('modelContainer');
 const renderer = new THREE.WebGLRenderer({alpha: true})
 // renderer.physicallyCorrectLights = true //deprecated
 renderer.useLegacyLights = false //use this instead of setting physicallyCorrectLights=true property
@@ -52,13 +53,14 @@ renderer.setSize(window.innerWidth, window.innerHeight)
 renderer.domElement.style.width = '100%'
 renderer.domElement.style.height = 'auto'
 document.body.appendChild(container);
-container.appendChild( renderer.domElement );
+container.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement)
 controls.enableDamping = true
 
 
 function loadModel() {
+    document.getElementById('consoleOutput').innerHTML = 'Loading model...'
     loader.load(path, function (gltf) {
         gltf.scene.scale.set(0.1, 0.1, 0.1)
         gltf.scene.position.set(0, 0, -2)
@@ -81,6 +83,7 @@ function loadModel() {
     }, function (xhr) {
         console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
         console.log('loading model')
+        document.getElementById('consoleOutput').innerHTML = 'Model successfully loaded!'
     }, function (error) {
         console.log(error)
 
@@ -161,3 +164,25 @@ document.getElementById('vcut').addEventListener('click', () => {
     setLight()
     loadModel()
 })
+
+
+var slider = document.getElementById("slider");
+var output = document.getElementById("output-angle");
+output.value = slider.value;
+var output2 = document.getElementById("output-angle-second");
+output2.value = slider.value;
+
+slider.oninput = function () {
+    document.getElementById('output-angle').value = this.value;
+    getOther()
+}
+
+function getOther() {
+    let temp = document.getElementById('output-angle').value
+    document.getElementById('output-angle-second').value = temp
+}
+
+output.oninput = function () {
+    let temp = document.getElementById('output-angle').value
+    document.getElementById('output-angle-second').value = temp
+}

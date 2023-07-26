@@ -1,50 +1,117 @@
 body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: auto auto;
+    /*height: 100;*/
+    grid-template-areas:
+            'header header header header header'
+            'form form model model model'
+            'form form model model model'
+            'form form model model model'
+            'form form console console console';
 }
-
-#inputData {
-    text-align: left;
-    padding-top: 6vh;
-    flex: 1;
-}
-
-.preCuts {
-
-}
-
-.mainDiv {
-    border: green 2px solid;
-    display: grid;
-    grid-template-columns: auto auto;
-}
-.grid-child {
-    border: red 3px solid;
-    width: 50%;
-    height: 100%;
-}
-
-
-/*test*/
-
-/*.wrapper {*/
-/*    display: grid;*/
-/*    grid-template-columns: auto auto;*/
-/*    border: green 2px solid;*/
+/*div {*/
+/*    border: orange 2px solid;*/
 /*}*/
-/*.content {*/
-/*    border: red 3px solid;*/
-/*    width: 50%;*/
-/*    height: auto;*/
-/*}*/
-
-
-
 
 .content {
-    border: orange 2px solid;
-    width: 50vw;
-    height: auto; /* Adjust the height as needed */
+    /*border: orange 2px solid;*/
+}
+.header {
+    grid-area: header;
+    border-bottom: lightgrey 2px solid;
+    height: 8vh;
+}
+.header-text {
+    font-size: 175%;
+    font-weight: bold;
+    text-align: center;
+}
+.header-logo {
+    height: 1.5rem;
+}
+.form {
+    grid-area: form;
+    border-right: lightgrey 2px solid;
+    width: 20vw;
+    height: 90vh;
+}
+.form-inner {
+    /*border: red 2px solid;*/
+    height: 45%;
+    border-top: lightgrey 2px solid;
+    padding: 0.5rem;
+}
+.form-header {
+    font-size: 125%;
+    margin-left: 1rem;
+}
+.left {
+    padding: 0.5rem;
+    padding-top: 2.5rem;
+}
+
+.middle {
+}
+.right {
+    padding: 0.5rem;
+    padding-top: 1.5rem;
+}
+.form-buttons {
+    padding: 0.5rem;
+}
+.form-content-box {
+    /*border: blue 2px solid;*/
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.form-content {
+    /*border: orange 2px solid;*/
+}
+.form-slider {
+
+}
+.left-content {
+    margin: 0.5rem;
+}
+
+
+.form-lock {
+    margin-bottom: 1rem;
+}
+.form-input {
+    width: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+.form-output {
+    width: 7.8rem;
+}
+.form-submit {
+    width: 8.2rem;
+    margin-top: 0.5rem;
+}
+
+
+
+.form-buttons {
+    display: grid;
+    grid-template-columns: auto ;
+}
+
+
+.model {
+    grid-area: model;
+    height: 85vh;
+}
+.console {
+    grid-area: console;
+    height: 6.5vh;
+    border-top: lightgrey 2px solid;
+    background: lightgrey;
+}
+.console-text {
+    font-size: 100%;
+    text-align: center;
+    color: green;
 }
