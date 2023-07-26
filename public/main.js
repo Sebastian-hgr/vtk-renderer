@@ -49,6 +49,8 @@ renderer.shadowMap.enabled = true
 
 // renderer.outputEncoding = THREE.sRGBEncoding
 renderer.setSize(window.innerWidth, window.innerHeight)
+renderer.domElement.style.width = '100%'
+renderer.domElement.style.height = 'auto'
 document.body.appendChild(container);
 container.appendChild( renderer.domElement );
 
@@ -60,7 +62,6 @@ function loadModel() {
     loader.load(path, function (gltf) {
         gltf.scene.scale.set(0.1, 0.1, 0.1)
         gltf.scene.position.set(0, 0, -2)
-
 
         gltf.scene.traverse(function (child) {
             if (child.isMesh) {

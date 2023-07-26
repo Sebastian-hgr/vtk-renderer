@@ -1,11 +1,12 @@
 body {
-    overflow: hidden;
-    margin: 0px;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: auto auto;
 }
 
 #inputData {
     text-align: left;
-    margin-left: 4vw;
     padding-top: 6vh;
     flex: 1;
 }
@@ -15,7 +16,35 @@ body {
 }
 
 .mainDiv {
+    border: green 2px solid;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: auto auto;
+}
+.grid-child {
+    border: red 3px solid;
+    width: 50%;
+    height: 100%;
+}
+
+
+/*test*/
+
+/*.wrapper {*/
+/*    display: grid;*/
+/*    grid-template-columns: auto auto;*/
+/*    border: green 2px solid;*/
+/*}*/
+/*.content {*/
+/*    border: red 3px solid;*/
+/*    width: 50%;*/
+/*    height: auto;*/
+/*}*/
+
+
+
+
+.content {
+    border: orange 2px solid;
+    width: 50vw;
+    height: auto; /* Adjust the height as needed */
 }
